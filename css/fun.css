@@ -1,10 +1,114 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.skip a {
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+
+.skip a:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+.header {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Francois One', sans-serif;
+  padding: 10px;
+  background-color: #FABC09;
+  color:#374353;
+}
+
+
+
 body {
-  background-color: white;
-
-
-
+  background-color: #374353;
 
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+  color: white;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/*hide research and teaching pages*/
+#r{
+  display: none;
+}
+#t{
+  display:none;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: #374353;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav .active{
+  padding: 15px;
+  color: #374353;
+  font-weight: bold;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a{
+  background-color:#374353;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: #374353;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #92E8D5;
+  color: white;
+}
+
+.fa-icon {
+  text-decoration: none;
+  color: white;
+  height: auto;
+  padding: 10px;
+}
+
+.fa-icon:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+
 
 /*tab container*/
 
@@ -35,7 +139,7 @@ body {
 
 #tabs li a {
 
-    font-family:Arial, Helvetica, sans-serif; 
+    font-family: helvetica, sans-serif; 
     font-size: small;
     font-weight: bold; 
     color: #504f54;
@@ -44,7 +148,7 @@ body {
     padding-right: 7px;
     padding-bottom: 8px; 
     display:block; 
-    background: lightgrey;
+    background: #92E8D5;
     border-top-left-radius:3px; 
     border-top-right-radius:3px; 
     text-decoration:none;
@@ -80,7 +184,7 @@ body {
     border-bottom-left-radius: 25px;
     text-align:left;
     padding: 40px;
-    background-color: #faebd7;
+    background-color: #fabc09;
 
 
 }
@@ -121,6 +225,20 @@ body {
 
 }
 
+.mySlides2 {
+  display: none;
+  max-height: 400px;
+  max-width: 800px;
+  margin: auto;
+
+}
+
+.mySlides2 img {
+  max-height: 150px;
+
+}
+
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -155,13 +273,13 @@ body {
 
 /* Caption text */
 .text {
-  font-family: "Abril Fatface", cursive;
+  font-family: helvetica, cursive;
   color: #90ee90;
   font-size: 11px;
   font-weight: bold;
   padding: 8px 12px;
   position: absolute;
-  bottom: -25px;
+  bottom: -40px;
   width: 100%;
   /*text-align: center;*/
   
@@ -179,27 +297,13 @@ body {
 
 }
 
-/*
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
 
-.active, .dot:hover {
-  background-color: #717171;
-}*/
 
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
-  animation-name: fade;
+  animation-nameƒ: fade;
   animation-duration: 1.5s;
 }
 
@@ -212,3 +316,60 @@ body {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+@media screen and (min-width: 800px) {
+
+  .container {
+
+    min-height: 250px;
+  }
+
+  .slideshow-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+
+  }
+
+  .mySlides {
+
+    grid-column: 2 / span 1;
+
+  }
+
+  .mySlides2 {
+
+    grid-column: 2 / span 1;
+
+  }
+
+  .text {
+
+    grid-column: 2 / span 1;
+    bottom: -50px;
+
+
+  }
+
+  .next {
+    right: 100px;
+  
+}
+
+  .prev {
+    left: 100px;
+}
+
+  .prev, .next {
+    
+    font-size: 30px;
+    
+  
+}
+
+
+
+
+}
+
+
+
